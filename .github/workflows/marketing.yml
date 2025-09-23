@@ -8,7 +8,7 @@ on:
       - 'packages/marketing/**'
 defaults:
   run:
-    working-directory: packages/container
+    working-directory: packages/marketing
 
 jobs:
   build:
