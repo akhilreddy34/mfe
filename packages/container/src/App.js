@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { StylesProvider, createGenerateClassName } from "@material-ui/core/styles";
 
 
-const createGenerateClassNameForCo = createGenerateClassName({
+const generateClassName = createGenerateClassName({
     productionPrefix: 'co'
 });
 
@@ -13,7 +13,7 @@ const createGenerateClassNameForCo = createGenerateClassName({
 export default () => {
     return (
         <BrowserRouter>
-            <StylesProvider createGenerateClassName={createGenerateClassNameForCo}>
+            <StylesProvider generateClassName={generateClassName}>
                 <div>
                     <Header />
                     <MarketingApp />
