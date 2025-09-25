@@ -8,24 +8,24 @@ const { Module } = require('webpack');
 
 const devConfig = {
     mode: 'development',
-     output:{
-        publicPath: 'http://localhost:8081/'
+    output:{
+        publicPath: 'http://localhost:8082/'
     },
     devServer: {
-        port: 8081,
+        port: 8082,
         historyApiFallback: {
             index: '/index.html'
         }
     },
     plugins: [
         new htmlWebpackPlugin({
-            template: './public/index.html'
+            template: './public/index.html',
         }),
         new ModuleFederationPlugin({
-            name: 'marketing',
+            name: 'auth',
             filename: 'remoteEntry.js',
             exposes: {
-                './MarketingApp': './src/bootstrap'
+                './AuthApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
         })
